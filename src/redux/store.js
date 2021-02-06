@@ -1,6 +1,6 @@
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import itemsReducer from "./items-reducer";
-import {reducer as formReducer} from "redux-form"
+import { reducer as formReducer } from 'redux-form';
 
 let reducers = combineReducers({
     products: itemsReducer,
@@ -9,6 +9,6 @@ let reducers = combineReducers({
 
 const reducer = combineReducers(reducers);
 
-let store = createStore(reducer)
+let store = createStore(reducer);
 
-export default store
+export default store;
