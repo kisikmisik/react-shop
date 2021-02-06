@@ -21,9 +21,13 @@ const itemsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 productsInCart: [...state.productsInCart, action.item],
-                products: [...state.products, ...state.productsitemsReducer.isAddedToCart = false]
+                products: [...state.products, ...state.products.isAddedToCart = false]
             }
+
+        default:
+            return state
+
     }
 }
 
-export default itemsReducer
+export default itemsReducer;
