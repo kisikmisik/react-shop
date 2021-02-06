@@ -13,8 +13,9 @@ function App() {
       <div className="container">
         <Switch>
             <Route path='/contact' render={Contact}/>
-            <Route path='/' render={Products}/>
             <Route path='/checkout' render={Checkout}/>
+            <Route path='/' render={Products}/>
+            
         </Switch>
       </div>
       <Footer/>

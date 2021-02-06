@@ -1,12 +1,12 @@
 import React from 'react'
 import s from './CheckoutForm.module.scss'
-import { Field } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
 let CheckoutForm = (props) => {
-    const {handleSubmit} = props
+    const {onSubmit} = props
     return (
-        <form className={s.checkout} onSubmit={handleSubmit}>
-            <div className={s.shipping}>
+        <form className={s.checkout} onSubmit={onSubmit}>
+            <div className={s.formWrapper}>
                 <h3 className={s.shippingHeader}>
                     Shipping information
                 </h3>
@@ -46,9 +46,30 @@ let CheckoutForm = (props) => {
                     <Field component={"input"} type="text" name="zip" type="text" className={s.fieldInput}/>
                 </label>
             </div>
+            <div className={s.formWrapper}>
+                <label  className={s.field}>
+                    <span className={s.fieldLabel}>
+                        Email address
+                    </span>
+                    <Field component={"input"} type="email" name="email" type="text" className={s.fieldInput}/>
+                </label>
+
+                <label  className={s.field}>
+                    <span className={s.fieldLabel}>
+                        Phone number
+                    </span>
+                    <Field component={"input"} type="number" name="zip" type="text" className={s.fieldInput}/>
+                </label>
+            </div>
+
+            <button className={s.buyButton}>
+                Continue to payment information
+            </button>
             
         </form>
     )
 }
 
-export default CheckoutForm;
+const CheckoutReduxForm = reduxForm({form: 'checkoutForm'})(CheckoutForm)
+
+export default CheckoutReduxForm;
