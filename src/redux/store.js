@@ -7,6 +7,8 @@ let reducers = combineReducers({
     form: formReducer
 })
 
-let store = createStore(reducers, applyMiddleware());
+const reducer = combineReducers(reducers);
+
+let store = createStore(reducer);
 
 export default store;
